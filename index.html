@@ -29,116 +29,131 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+    
 <!-- START MAIN  -->
     <main class="container">
       <div class="row border my-2 mx-1 time-block">
+      <!-- Hour Display -->
         <div class="col-md-1">
-          <p id="day-time">9AM</p>
+          <p class="time-hour">9AM</p>
         </div>
-        <div class="col-md-9">
-          <textarea id="plan-here"></textarea>
+      <!-- Text area and Div  -->
+        <div class="displayTodo col-md-9">
+          <div class="storedTodo"></div>
+          <textarea class="plan-here"></textarea> 
         </div>
+      <!-- Save and Clear Buttons -->
         <div class="col-md-2">
-          <button class="col-md-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
+          <button class="col-md-5 clearBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn" data-number="9AM"><i class="fas fa-save"></i></button>
         </div>
       </div>
 
       <div class="row border my-2 mx-1 time-block">
         <div class="col-md-1">
-          <p id="day-time">10AM</p>
+          <p class="time-hour">10AM</p>
+        </div>
+        <div class="displayTodo col-md-9">
+          <div class="storedTodo"></div>
+          <textarea class="plan-here"></textarea> 
+        </div>
+        <div class="col-md-2">
+          <button class="col-md-5 clearBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn" data-number="10AM"><i class="fas fa-save"></i></button>
+        </div>
+      </div>
+
+      <!-- <div class="row border my-2 mx-1 time-block">
+        <div class="col-md-1">
+          <p class="time-hour">11AM</p>
         </div>
         <div class="col-md-9">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
-          <button class="col-md-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
+          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
         </div>
       </div>
 
       <div class="row border my-2 mx-1 time-block">
         <div class="col-md-1">
-          <p id="day-time">11AM</p>
+          <p class="time-hour">12PM</p>
         </div>
         <div class="col-md-9">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
-          <button class="col-md-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
+          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
         </div>
       </div>
 
       <div class="row border my-2 mx-1 time-block">
         <div class="col-md-1">
-          <p id="day-time">12PM</p>
+          <p class="time-hour">1PM</p>
         </div>
         <div class="col-md-9">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
-          <button class="col-md-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
+          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
         </div>
       </div>
 
       <div class="row border my-2 mx-1 time-block">
         <div class="col-md-1">
-          <p id="day-time">1PM</p>
+          <p class="time-hour">2PM</p>
         </div>
         <div class="col-md-9">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
-          <button class="col-md-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
+          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
         </div>
       </div>
 
       <div class="row border my-2 mx-1 time-block">
         <div class="col-md-1">
-          <p id="day-time">2PM</p>
+          <p class="time-hour">3PM</p>
         </div>
         <div class="col-md-9">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
-          <button class="col-md-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
+          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
         </div>
       </div>
 
       <div class="row border my-2 mx-1 time-block">
         <div class="col-md-1">
-          <p id="day-time">3PM</p>
+          <p class="time-hour">4PM</p>
         </div>
         <div class="col-md-9">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
-          <button class="col-md-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
+          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
         </div>
       </div>
 
       <div class="row border my-2 mx-1 time-block">
         <div class="col-md-1">
-          <p id="day-time">4PM</p>
+          <p class="time-hour">5PM</p>
         </div>
         <div class="col-md-9">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
-          <button class="col-md-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
+          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
         </div>
-      </div>
-
-      <div class="row border my-2 mx-1 time-block">
-        <div class="col-md-1">
-          <p id="day-time">5PM</p>
-        </div>
-        <div class="col-md-9">
-          <textarea id="plan-here"></textarea>
-        </div>
-        <div class="col-md-2 justify-content-right">
-          <button class="col-6 saveBtn" id="save"><i class="fas fa-save"></i></button>
-        </div>
-      </div>
-
+      </div> -->
+      
     </main>
 <!-- END MAIN -->
     <script src="scripts/scripts.js" async defer></script>
