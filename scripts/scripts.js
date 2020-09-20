@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Creating necessary var to store date 
+    // TIME DISPLAY
     var date = new Date();
     var getMonth = date.getMonth();
     var getDay = date.getDay();
@@ -7,36 +7,67 @@ $(document).ready(function() {
     var getHours = date.getHours();
     var days = ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"];
     var months = ["January" , "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"];
-    var hours = ["12AM" , "1AM" , "2AM" , "3AM" , "4AM" , "5AM" , "6AM" , "7AM" , "8AM" , "9AM" , "10AM" , "11AM" , "12PM" , "1PM" , "2PM" , "3PM" , "4PM" , "5PM" , "6PM" , "7PM" , "8PM" , "9PM" , "10PM" , "11PM"];
-    var businessHours = ["9AM" , "10AM" , "11AM" , "12PM" , "1PM" , "2PM" , "3PM" , "4PM" , "5PM"];
-    var atWork = false;
-    // Displaying date
-    $('#currentDay').text(days[getDay] + ", " + months[getMonth] + " " +getDate + "th");
+    // var hours = ["12AM" , "1AM" , "2AM" , "3AM" , "4AM" , "5AM" , "6AM" , "7AM" , "8AM" , "9AM" , "10AM" , "11AM" , "12PM" , "1PM" , "2PM" , "3PM" , "4PM" , "5PM" , "6PM" , "7PM" , "8PM" , "9PM" , "10PM" , "11PM"];
+    var businessIndex = [9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17];
+    var businessHours = ["0" , "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8"]; 
+    // var currentHour = hours[getHours];
 
-    for (var k = 0; k < businessHours.length; k++) {
-        $('.time-hour' + k).text(businessHours[k]);
-    }
-    
-    
-    if (hours[getHours] === businessHours[0]) {
-        atWork = true;
+    currentDate();
+
+    function currentDate() {
+        $('#currentDay').text(days[getDay] + ", " + months[getMonth] + " " +getDate + "th");
     }
 
-    if (atWork == true) {
-       for (var l = 0; l < businessHours; l++) {
-            if ($('box-' + l).attr('value') == hours[getHours])
-                $('box-' + l).addClass('present');
-       } 
+// ADDING/ REMOVING CLASSES BASED ON TIME OF DAY
+    var indexCount = 0; 
+
+    indexCounter();
+    classSelector();
+
+    function indexCounter() {
+        indexCount++;
+        if (getHours !== businessIndex[indexCount]) {
+            indexCounter();
+        }
     }
+
+    console.log($('.time-hour' + indexCount).text())
+    function classSelector() {
+
+        if ($('.time-hour' + indexCount).attr('data-number') === businessHours[indexCount]) {
+            $('.time-hour' + indexCount).parent().addClass('present');
+        } else if ($('.time').attr('data-number') > businessHours[indexCount]) {
+            $('.time').parent().addClass('future');
+        } else {
+            $('.time').parent().addClass('past');
+        }
+    }
+
+
+
+// console.log(atWork)
+
+
+    // Start business day 
+    // if (currentHour === businessHours[indexCounter]) {
+    //     atWork = true;
+    // }
+    // console.log(atWork)
+    // function dateCreator() {
+    // if (atWork === true) {
+    //    for (var l = 0; l < businessHours; l++) {
+    //         if (businessHours[l] == $('.time-block').attr('data-number' , l)) {}
+    //    } 
+    // }
+    // }
 
     // function classSelector() {
         
     // }
 
-    console.log($('.time-block').attr('value'))
 
-// -------------------------------------------------------------
-// -------------------------------------------------------------
+// ============================================================================
+// ============================================================================
     var todo = {
         todoItem : []
     };

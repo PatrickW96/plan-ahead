@@ -32,11 +32,9 @@
     
 <!-- START MAIN  -->
     <main class="container">
-      <div class="row border my-2 mx-1 time-block" data-number="1">
+      <div class="row border my-2 mx-1 time-block">
       <!-- Hour Display -->
-        <div class="col-md-1">
-          <p class="time-hour0"></p>
-        </div>
+          <p class="time-hour0 col-md-1" data-number="0">9AM</p>
       <!-- Text area and Div  -->
         <div class="displayTodo col-md-9">
           <div class="storedTodo"></div>
@@ -49,10 +47,8 @@
         </div>
       </div>
 
-      <div class="row border my-2 mx-1 time-block" data-number="2">
-        <div class="col-md-1">
-          <p class="time-hour1"></p>
-        </div>
+      <div class="row border my-2 mx-1 time-block">
+          <p class="time-hour1 time col-md-1" data-number="1">10AM</p>
         <div class="displayTodo col-md-9">
           <div class="storedTodo"></div>
           <textarea class="plan-here"></textarea> 
@@ -63,11 +59,9 @@
         </div>
       </div>
 
-      <!-- <div class="row border my-2 mx-1 time-block">
-        <div class="col-md-1">
-          <p class="time-hour2">11AM</p>
-        </div>
-        <div class="col-md-9">
+      <div class="row border my-2 mx-1 time-block">
+          <p class="time-hour2 time col-md-1" data-number="2">11PM</p>
+        <div class="col-md-9 displayTodo">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
@@ -77,10 +71,19 @@
       </div>
 
       <div class="row border my-2 mx-1 time-block">
-        <div class="col-md-1">
-          <p class="time-hour3">12PM</p>
+          <p class="time-hour3 time col-md-1" data-number="3">12PM</p>
+        <div class="col-md-9 displayTodo">
+          <textarea id="plan-here"></textarea>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-2">
+          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
+          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
+        </div>
+      </div>
+
+      <div class="row border my-2 mx-1 time-block ">
+          <p class="time-hour4 time col-md-1" data-number="4">1PM</p>
+        <div class="col-md-9 displayTodo">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
@@ -90,10 +93,8 @@
       </div>
 
       <div class="row border my-2 mx-1 time-block">
-        <div class="col-md-1">
-          <p class="time-hour4">1PM</p>
-        </div>
-        <div class="col-md-9">
+          <p class="time-hour5 time col-md-1" data-number="5">2PM</p>
+       <div class="col-md-9 displayTodo">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
@@ -103,10 +104,8 @@
       </div>
 
       <div class="row border my-2 mx-1 time-block">
-        <div class="col-md-1">
-          <p class="time-hour5">2PM</p>
-        </div>
-        <div class="col-md-9">
+          <p class="time-hour6 time col-md-1" data-number="6">3PM</p>
+        <div class="col-md-9 displayTodo">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
@@ -116,10 +115,8 @@
       </div>
 
       <div class="row border my-2 mx-1 time-block">
-        <div class="col-md-1">
-          <p class="time-hour6">3PM</p>
-        </div>
-        <div class="col-md-9">
+          <p class="time-hour7 time col-md-1" data-number="7">4PM</p>
+        <div class="col-md-9 displayTodo">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
@@ -129,10 +126,8 @@
       </div>
 
       <div class="row border my-2 mx-1 time-block">
-        <div class="col-md-1">
-          <p class="time-hour7">4PM</p>
-        </div>
-        <div class="col-md-9">
+          <p class="time-hour8 time col-md-1" data-number="8">5PM</p>
+        <div class="col-md-9 displayTodo">
           <textarea id="plan-here"></textarea>
         </div>
         <div class="col-md-2">
@@ -140,19 +135,6 @@
           <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
         </div>
       </div>
-
-      <div class="row border my-2 mx-1 time-block">
-        <div class="col-md-1">
-          <p class="time-hour8">5PM</p>
-        </div>
-        <div class="col-md-9">
-          <textarea id="plan-here"></textarea>
-        </div>
-        <div class="col-md-2">
-          <button class="col-md-5 saveBtn ml-1"><i class="fas fa-check"></i></button>
-          <button class="col-md-5 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-      </div> -->
       
     </main>
 <!-- END MAIN -->
