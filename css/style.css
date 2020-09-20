@@ -82,3 +82,8 @@ textarea{
   text-align: left;
 }
 
+span {
+  display: block;
+  line-height: 2rem;
+}
+
