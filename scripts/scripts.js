@@ -8,7 +8,8 @@ $(document).ready(function() {
     var days = ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"];
     var months = ["January" , "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"];
     var businessHours = ["9AM" , "10AM" , "11AM" , "12PM" , "1PM" , "2PM" , "3PM" , "4PM" , "5PM"];
-    var businessIndex = [9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17]; 
+    var businessIndex = [9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17];
+    var indexCount = 0; 
     var atWork = false;
 
     currentDate();
@@ -33,4 +34,18 @@ $(document).ready(function() {
             $('main').append(mainDiv);
         }    
     }
+
+    function isAtWork() {
+        if (hours >= 9 && hours <= 17) {
+            atWork = true;
+        } else {
+            atWork = false;
+        }    
+    }
+    
+    console.log(atWork)
+
+    // setInterval(ifAtWork , 1000 * 60 * 60);
+
+
 })
