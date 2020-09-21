@@ -9,20 +9,18 @@ $(document).ready(function() {
     var months = ["January" , "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"];
     var businessHours = ["9AM" , "10AM" , "11AM" , "12PM" , "1PM" , "2PM" , "3PM" , "4PM" , "5PM"];
     var businessIndex = [9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17];
-    var indexCount = 16; 
     var atWork = false;
 
     currentDate();
     createTimeblock()
-    function currentDate() {
-        $('#currentDay').text(days[getDay] + ", " + months[getMonth] + getDate);
-    }
+    isAtWork();
+    classSelector();
 
-    // CREATING APPS BODY LAYOUT
+    // DYNAMICALLY CREATING APPS BODY LAYOUT
     function createTimeblock() {
         for (var i = 0; i < businessHours.length; i++) {
-            var mainDiv =`<div class="row border my-2 mx-1 time-block" "data-number=${businessIndex[i]}">` +
-                         `<p class="time-hour${businessIndex[i]} col-md-1">${businessHours[i]}</p>` +
+            var mainDiv =`<div class="row border my-2 mx-1 time-block block${businessIndex[i]}" data-number="${businessIndex[i]}">` +
+                         `<p class="time-hour col-md-1">${businessHours[i]}</p>` +
                          `<div class="displayTodo col-md-9">` +
                          `<div class="storedTodo"></div>` +
                          `<textarea class="plan-here"></textarea>` +
@@ -35,21 +33,39 @@ $(document).ready(function() {
         }    
     }
 
+
+    function currentDate() {
+        $('#currentDay').text(days[getDay] + ", " + months[getMonth] + getDate);
+    }
+
     function isAtWork() {
         if (hours >= 9 && hours <= 17) {
             atWork = true;
         } else {
             atWork = false;
         }    
+    };
+
+    function classSelector() {
+        if (atWork !== false) {
+            $('[data-number]').each(function() {
+                $(this).removeClass('offlie');
+                if ($(this).data('number') === hours) {
+                    $(this).removeClass('future past').addClass('present');
+                }
+                if ($(this).data('number') > hours) {
+                    $(this).removeClass('present past').addClass('future');
+                }
+                if ($(this).data('number') < hours) {
+                    $(this).removeClass('future present').addClass('past');
+                }          
+            });
+        }
     }
 
-    // console.log(businessHours[indexCount])
-    console.log($(`.time-hour${indexCount}`).text())
+// ==================================================================================
+// ==================================================================================
+    // TODO FUNCTIONS - necessary variables
+    
 
-    isAtWork();
-    // console.log($('.time-hour15').text())
-    if (atWork == true) {
-        $('.time-block').addClass('future');
-    }
-})
- 
+});
