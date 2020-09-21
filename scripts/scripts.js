@@ -11,6 +11,7 @@ $(document).ready(function() {
     var businessIndex = [9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17];
     var businessHours = ["0" , "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8"]; 
     // var currentHour = hours[getHours];
+    var atWork = false;
 
     currentDate();
 
@@ -21,7 +22,7 @@ $(document).ready(function() {
 // ADDING/ REMOVING CLASSES BASED ON TIME OF DAY
     var indexCount = 0; 
 
-    indexCounter();
+    // indexCounter();
     classSelector();
 
     function indexCounter() {
@@ -32,6 +33,7 @@ $(document).ready(function() {
     }
 
     console.log($('.time-hour' + indexCount).text())
+
     function classSelector() {
 
         if ($('.time-hour' + indexCount).attr('data-number') === businessHours[indexCount]) {
@@ -68,43 +70,43 @@ $(document).ready(function() {
 
 // ============================================================================
 // ============================================================================
-    var todo = {
-        todoItem : []
-    };
+    var todo = '';
     var todoList = [];
-    
-    retrevingStoredItem();
+    // retrevingStoredItem();
     
     $('.saveBtn').on('click' , addTask);
 
-
     function addTask() {
-        storeTask();
-        todo.todoItem.push($(this).parent().prev().children('textarea').val());
+        
+        todo = $(this).parent().prev().children('textarea').val();
+        // console.log(localStorage.getItem('todo 3')); 
 
-        console.log(todo.todoItem)    
-
-        if (todo.todoItem !== "") {
+        if (todo !== "") {
             todoList.push(todo);
-            console.log(todoList)    
+            for (var q = 0; q < todoList.length; q++) {
+                $(this).parent().prev().children('.storedTodo').append($(`<p>`).text(
+                    for (var j = 0; j < todoList.length; j++) {
+                    localStorage.getItem('todo ' + j);
+                });
+            }
             clearText();
             storeTask();
         }
+        console.log(todoList) ;
     }
 
     function retrevingStoredItem() {
-        for (var j = 0; j < todoList.length; j++)
-            var storage = localStorage.getItem('todo ' + j);
-            $(this).parent().prev().children('div').append($(`<span>${storage}</span>`));
-            console.log(storage) 
+        for (var j = 0; j < todoList.length; j++) {
+            localStorage.getItem('todo ' + j);
+        }
+    
     }
 
     function storeTask() {
         for (var i = 0; i < todoList.length; i++) {
-            localStorage.setItem('todo '+ i , JSON.stringify(todo.todoItem[i]));
+            localStorage.setItem('todo '+ i , todoList[i]);
         }
     }
-        // $('button').parent().prev().children('div').text("Text is here")
 
     function clearText() {
         $('.plan-here').val(" ");
