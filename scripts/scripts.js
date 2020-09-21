@@ -9,7 +9,7 @@ $(document).ready(function() {
     var months = ["January" , "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"];
     var businessHours = ["9AM" , "10AM" , "11AM" , "12PM" , "1PM" , "2PM" , "3PM" , "4PM" , "5PM"];
     var businessIndex = [9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17];
-    var indexCount = 0; 
+    var indexCount = 16; 
     var atWork = false;
 
     currentDate();
@@ -21,8 +21,8 @@ $(document).ready(function() {
     // CREATING APPS BODY LAYOUT
     function createTimeblock() {
         for (var i = 0; i < businessHours.length; i++) {
-            var mainDiv =`<div class="row border my-2 mx-1 time-block">` +
-                         `<p class="time-hour0 col-md-1" data-number="${i}">${businessHours[i]}</p>` +
+            var mainDiv =`<div class="row border my-2 mx-1 time-block" "data-number=${businessIndex[i]}">` +
+                         `<p class="time-hour${businessIndex[i]} col-md-1">${businessHours[i]}</p>` +
                          `<div class="displayTodo col-md-9">` +
                          `<div class="storedTodo"></div>` +
                          `<textarea class="plan-here"></textarea>` +
@@ -42,10 +42,14 @@ $(document).ready(function() {
             atWork = false;
         }    
     }
-    
-    console.log(atWork)
 
-    // setInterval(ifAtWork , 1000 * 60 * 60);
+    // console.log(businessHours[indexCount])
+    console.log($(`.time-hour${indexCount}`).text())
 
-
+    isAtWork();
+    // console.log($('.time-hour15').text())
+    if (atWork == true) {
+        $('.time-block').addClass('future');
+    }
 })
+ 
