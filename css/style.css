@@ -30,6 +30,7 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
+  padding: 10px;
 }
 
 .past {
@@ -63,13 +64,8 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-.time-block {
-  padding: 10px;
-}
-
 .displayTodo{
   border-left: solid 1px #000000;
-
 }
 
 .fa-save, .fa-check {
