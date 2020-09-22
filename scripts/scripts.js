@@ -63,10 +63,9 @@ $(document).ready(function() {
             });
         }
     }
-
 // ==================================================================================
 // ==================================================================================
-    // TODO FUNCTIONS - necessary variables
+    // TODO FUNCTIONS
     $('.plan-here9').html(localStorage.getItem('todo9'));
     $('.plan-here10').html(localStorage.getItem('todo10'))
     $('.plan-here11').html(localStorage.getItem('todo11'))
@@ -77,16 +76,18 @@ $(document).ready(function() {
     $('.plan-here16').html(localStorage.getItem('todo16'))
     $('.plan-here17').html(localStorage.getItem('todo17'))
 
+    // FUNCTION TO SAVE TODO TASK FOR EACH TIMEBLOCK TO LOCAL STORAGE
     function addTask() {
         localStorage.setItem(`todo${$(this).parent().parent().attr(`data-number`)}` , $(this).parent().prev().children('textarea').val());
     }
 
+    // TO CLEAR ITEM OF LIST WHEN TASK IS COMPLETE
     function clearButton() {
         localStorage.removeItem(`todo${$(this).parent().parent().attr(`data-number`)}`);
         $(this).parent().prev().children('textarea').val(" ");
     }
 
+    // ADDING EVENT LISTENERS TO CLEAR/SAVE BUTTONS
     $('.saveBtn').on('click' , addTask);
     $('.clearBtn').on('click' , clearButton);
-
 });
