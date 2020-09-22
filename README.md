@@ -18,3 +18,5 @@ I also decided to add a completed button that can be clicked once a task is comp
 
 #Conclusion
  Dyanmically created and coded with javascript this app was designed with one thing in mind: Making sure we can find balance is an overwhelmingly busy day to day life. Make sure to Plan Ahead.
+
+<img src ="images/Screen Shot 2020-09-22 at 12.33.38 PM.png" style="width: 200px , height: 200px">
