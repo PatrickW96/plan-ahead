@@ -23,7 +23,7 @@ $(document).ready(function() {
                          `<p class="time-hour col-md-1">${businessHours[i]}</p>` +
                          `<div class="displayTodo col-md-9">` +
                          `<div class="storedTodo"></div>` +
-                         `<textarea class="plan-here"></textarea>` +
+                         `<textarea class="plan-here${businessIndex[i]}"></textarea>` +
                          `</div>` +
                          `<div class="col-md-2">` +
                          `<button class="col-md-5 clearBtn ml-1"><i class="fas fa-check"></i></button>` +
@@ -67,37 +67,26 @@ $(document).ready(function() {
 // ==================================================================================
 // ==================================================================================
     // TODO FUNCTIONS - necessary variables
-    // function addTodo() {
-    //     var todoItem1 = '';
-    //     var todoList1 = [];
-
-    //     todoItem1 = $(this).parent().prev().children('textarea').val();
-    //     console.log($(this).parent().prev().children('textarea').val())
-
-    //     if (todoItem1 !== "") {
-    //         todoList1.push(todoItem1)
-    //         todoItem1 = $(this).parent().prev().children('textarea').val();
-    //     }
-
-    //     localStorage.setItem('todo1' , todoItem1);
-
-    // }
-
-    // var todo = {
-    //     todoItem : []
-    // };
+    $('.plan-here9').html(localStorage.getItem('todo9'));
+    $('.plan-here10').html(localStorage.getItem('todo10'))
+    $('.plan-here11').html(localStorage.getItem('todo11'))
+    $('.plan-here12').html(localStorage.getItem('todo12'))
+    $('.plan-here13').html(localStorage.getItem('todo13'))
+    $('.plan-here14').html(localStorage.getItem('todo14'))
+    $('.plan-here15').html(localStorage.getItem('todo15'))
+    $('.plan-here16').html(localStorage.getItem('todo16'))
+    $('.plan-here17').html(localStorage.getItem('todo17'))
 
     function addTask() {
-        var todo = '';
-
-        if (todo !== ' ') {
-            todo = $(this).parent().prev().children('textarea').val();
-            localStorage.setItem(`todo${$(this).parent().parent().attr(`data-number`)}` , todo);    
-        }
-
-        var getFromStorage = localStorage.getItem(`todo${$(this).parent().parent().attr(`data-number`)}`);
-        console.log(getFromStorage)
-        $(this).parent().prev().children('textarea').val(getFromStorage);
+        localStorage.setItem(`todo${$(this).parent().parent().attr(`data-number`)}` , $(this).parent().prev().children('textarea').val());
     }
+
+    function clearButton() {
+        localStorage.removeItem(`todo${$(this).parent().parent().attr(`data-number`)}`);
+        $(this).parent().prev().children('textarea').val(" ");
+    }
+
     $('.saveBtn').on('click' , addTask);
+    $('.clearBtn').on('click' , clearButton);
+
 });
