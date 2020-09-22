@@ -33,11 +33,12 @@ $(document).ready(function() {
         }    
     }
 
-
+    // FUNCTION TO DISPLAY CURRENT DAY 
     function currentDate() {
         $('#currentDay').text(days[getDay] + ", " + months[getMonth] + getDate);
     }
 
+    // FUCNTION THAT DETERMINES IF APP SHOULD BE ACTIVE OR NOT 
     function isAtWork() {
         if (hours >= 9 && hours <= 17) {
             atWork = true;
@@ -46,10 +47,10 @@ $(document).ready(function() {
         }    
     };
 
+    // CHANGE TIMEBLOCK BACKGROUND COLOR BASED ON HOUR 
     function classSelector() {
         if (atWork !== false) {
             $('[data-number]').each(function() {
-                $(this).removeClass('offlie');
                 if ($(this).data('number') === hours) {
                     $(this).removeClass('future past').addClass('present');
                 }
@@ -66,6 +67,37 @@ $(document).ready(function() {
 // ==================================================================================
 // ==================================================================================
     // TODO FUNCTIONS - necessary variables
-    
+    // function addTodo() {
+    //     var todoItem1 = '';
+    //     var todoList1 = [];
 
+    //     todoItem1 = $(this).parent().prev().children('textarea').val();
+    //     console.log($(this).parent().prev().children('textarea').val())
+
+    //     if (todoItem1 !== "") {
+    //         todoList1.push(todoItem1)
+    //         todoItem1 = $(this).parent().prev().children('textarea').val();
+    //     }
+
+    //     localStorage.setItem('todo1' , todoItem1);
+
+    // }
+
+    // var todo = {
+    //     todoItem : []
+    // };
+
+    function addTask() {
+        var todo = '';
+
+        if (todo !== ' ') {
+            todo = $(this).parent().prev().children('textarea').val();
+            localStorage.setItem(`todo${$(this).parent().parent().attr(`data-number`)}` , todo);    
+        }
+
+        var getFromStorage = localStorage.getItem(`todo${$(this).parent().parent().attr(`data-number`)}`);
+        console.log(getFromStorage)
+        $(this).parent().prev().children('textarea').val(getFromStorage);
+    }
+    $('.saveBtn').on('click' , addTask);
 });
