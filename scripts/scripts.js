@@ -67,14 +67,14 @@ $(document).ready(function() {
 // ==================================================================================
     // TODO FUNCTIONS
     $('.plan-here9').html(localStorage.getItem('todo9'));
-    $('.plan-here10').html(localStorage.getItem('todo10'))
-    $('.plan-here11').html(localStorage.getItem('todo11'))
-    $('.plan-here12').html(localStorage.getItem('todo12'))
-    $('.plan-here13').html(localStorage.getItem('todo13'))
-    $('.plan-here14').html(localStorage.getItem('todo14'))
-    $('.plan-here15').html(localStorage.getItem('todo15'))
-    $('.plan-here16').html(localStorage.getItem('todo16'))
-    $('.plan-here17').html(localStorage.getItem('todo17'))
+    $('.plan-here10').html(localStorage.getItem('todo10'));
+    $('.plan-here11').html(localStorage.getItem('todo11'));
+    $('.plan-here12').html(localStorage.getItem('todo12'));
+    $('.plan-here13').html(localStorage.getItem('todo13'));
+    $('.plan-here14').html(localStorage.getItem('todo14'));
+    $('.plan-here15').html(localStorage.getItem('todo15'));
+    $('.plan-here16').html(localStorage.getItem('todo16'));
+    $('.plan-here17').html(localStorage.getItem('todo17'));
 
     // FUNCTION TO SAVE TODO TASK FOR EACH TIMEBLOCK TO LOCAL STORAGE
     function addTask() {
